@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>KTP Digital – Natfinz Cruz</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Roboto:wght@300;400&display=swap');
+
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    body{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        min-height:100vh;
+        background:#e5e5e5;
+        font-family:'Roboto',sans-serif;
+    }
+
+    .ktp{
+        width:540px;          /* ukuran asli 1.7 : 1.05 */
+        height:340px;
+        background:#fff;
+        border:1px solid #ccc;
+        border-radius:12px;
+        display:flex;
+        box-shadow:0 8px 20px rgba(0,0,0,.25);
+        overflow:hidden;
+    }
+
+    /* Sisi kiri (foto) */
+    .left{
+        width:130px;
+        background:#004d99;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-start;
+        padding:20px 10px;
+    }
+    .left img{
+        width:110px;
+        height:135px;
+        object-fit:cover;
+        border:3px solid #fff;
+    }
+    .logo{
+        margin-top:18px;
+        color:#fff;
+        font-family:'Oswald',sans-serif;
+        font-size:11px;
+        text-align:center;
+        letter-spacing:.5px;
+    }
+
+    /* Sisi kanan (data) */
+    .right{
+        flex:1;
+        padding:18px 20px;
+        position:relative;
+    }
+    .right h2{
+        font-family:'Oswald',sans-serif;
+        font-size:20px;
+        margin-bottom:12px;
+        color:#004d99;
+    }
+    table{
+        width:100%;
+        font-size:13px;
+        border-collapse:collapse;
+    }
+    td{padding:2px 0;}
+    .label{
+        width:120px;
+        font-weight:600;
+        color:#333;
+    }
+    .value{
+        font-weight:400;
+        color:#000;
+    }
+
+    /* Tanda tangan & barcode */
+    .bottom-right{
+        position:absolute;
+        bottom:18px;
+        right:20px;
+        text-align:right;
+    }
+    .signature{
+        width:110px;
+        height:40px;
+        object-fit:contain;
+        margin-bottom:3px;
+    }
+    .barcode{
+        width:80px;
+        height:30px;
+        object-fit:contain;
+    }
+</style>
+</head>
+<body>
+
+<div class="ktp">
+    <!-- Sisi kiri -->
+    <div class="left">
+        <img src="1000437230.jpg" alt="Foto">
+        <div class="logo">REPUBLIK<br>INDONESIA</div>
+    </div>
+
+    <!-- Sisi kanan -->
+    <div class="right">
+        <h2>PROVINSI JAWA BARAT</h2>
+        <table>
+            <tr>
+                <td class="label">NIK</td>
+                <td class="value">317405151020120001</td>
+            </tr>
+            <tr>
+                <td class="label">Nama</td>
+                <td class="value">NATFINZ CRUZ</td>
+            </tr>
+            <tr>
+                <td class="label">Tempat/Tgl Lahir</td>
+                <td class="value">JAKARTA, 15-10-2012</td>
+            </tr>
+            <tr>
+                <td class="label">Jenis Kelamin</td>
+                <td class="value">LAKI-LAKI</td>
+            </tr>
+            <tr>
+                <td class="label">Alamat</td>
+                <td class="value">Jl. Merdeka No. 88, Jakarta</td>
+            </tr>
+            <tr>
+                <td class="label">Agama</td>
+                <td class="value">ISLAM</td>
+            </tr>
+            <tr>
+                <td class="label">Status Perkawinan</td>
+                <td class="value">BELUM KAWIN</td>
+            </tr>
+            <tr>
+                <td class="label">Pekerjaan</td>
+                <td class="value">PELAJAR/MAHASISWA</td>
+            </tr>
+            <tr>
+                <td class="label">Kewarganegaraan</td>
+                <td class="value">INDONESIA</td>
+            </tr>
+        </table>
+
+        <!-- Tanda tangan & barcode -->
+        <div class="bottom-right">
+            <!-- Signature PNG (buat atau scan tanda-tangan) -->
+            <img src="signature.png" alt="Tanda Tangan" class="signature">
+            <img src="https://barcode.tec-it.com/barcode.ashx?data=317405151020120001&code=Code128&dpi=96" alt="Barcode" class="barcode">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
